@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd" xmlns:security="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
+<security:http use-expressions="true" auto-config="true">
+<security:csrf disabled="true"/>
+<security:intercept-url access="hasRole('ROLE_ADMIN')" pattern="/admin/**"/>
+<security:intercept-url access="hasRole('ROLE_USER')" pattern="/cart/**"/>
+<security:intercept-url access="permitAll" pattern="/**"/>
+<security:form-login default-target-url="/all/Products" login-processing-url="/j_spring_security_check" username-parameter="j_username" password-parameter="j_password" login-page="/login" authentication-failure-url="/loginerror"/>
+<security:logout logout-success-url="/logout" logout-url="/j_spring_security_logout"/>
+</security:http>
+<security:authentication-manager>
+<security:authentication-provider>
+<security:jdbc-user-service authorities-by-username-query="select user_emailid,role from authorities where user_emailid=?" users-by-username-query="select emailid,password,enabled from user where emailid=?" data-source-ref="dataSource"/>
+</security:authentication-provider>
+</security:authentication-manager>
+</beans>
+
+
+	
