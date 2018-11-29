@@ -52,7 +52,7 @@ public class ProductController {
 				return model;
 		}
 
-		@RequestMapping(value="/all/AddProduct", method=RequestMethod.GET)
+		@RequestMapping(value="/admin/AddProduct", method=RequestMethod.GET)
 		public ModelAndView getLogin(@ModelAttribute("Products")Product product)
 		{
 				System.out.println("Products");	

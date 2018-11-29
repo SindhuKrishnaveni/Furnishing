@@ -20,7 +20,7 @@
 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Product
 <span class="caret"></span></a>
 <ul class="dropdown-menu">
-<li><a href="<c:url value='/all/AddProduct'></c:url>">Add</a></li>
+<li><a href="<c:url value='/admin/AddProduct'></c:url>">Add</a></li>
 <li><a href="<c:url value='/all/ViewProduct'></c:url>">View</a></li>
 </ul>
 </li>

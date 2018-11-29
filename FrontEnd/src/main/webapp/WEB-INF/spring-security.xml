@@ -7,7 +7,7 @@
 <security:csrf disabled="true"/>
 <security:intercept-url access="hasRole('ROLE_ADMIN')" pattern="/admin/**"/>
 <security:intercept-url access="hasRole('ROLE_USER')" pattern="/cart/**"/>
-<security:intercept-url access="permitAll" pattern="/**"/>
+<!-- <security:intercept-url access="permitAll" pattern="/**"/> -->
 <security:form-login default-target-url="/all/Products" login-processing-url="/j_spring_security_check" username-parameter="j_username" password-parameter="j_password" login-page="/login" authentication-failure-url="/loginerror"/>
 <security:logout logout-success-url="/logout" logout-url="/j_spring_security_logout"/>
 </security:http>
